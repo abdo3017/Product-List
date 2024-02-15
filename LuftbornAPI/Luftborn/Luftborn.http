@@ -1,0 +1,10 @@
+@Flap_Kap_HostAddress = http://localhost:5001
+
+GET {{Flap_Kap_HostAddress}}/weatherforecast/
+Accept: application/json
+
+curl --request POST \
+  --url https://dev-totzczqthwgjzjlb.us.auth0.com/oauth/token \
+  --header 'content-type: application/json' \
+  --data '{"client_id":"2fzKceqEMplB9mk5vMuGMuTfwJg31Qzi","client_secret":"GJJv2MeQE5NIbKNiAB5Vgt0DQ4oZidJ1qwXO0yrRktR-c7Bvfq_e6YRcPWyj2stl","audience":"https://localhost:44367/","grant_type":"client_credentials"}
+###

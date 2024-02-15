@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="d-flex flex-column mt-4" (onclick)="onAdd()"><button class="btn btn-primary btn-sm" type="button"
+      (click)="onAdd()">Add Product</button></div>
+  <div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+      <div class="col-md-10">
+        <p-dataView #dv [value]="products" [rows]="5" [paginator]="true">
+          <ng-template let-product pTemplate="listItem">
+            <div class="row p-2 bg-white border rounded" style="margin: 5px;">
+              <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
+                  src="../../../assets/data/product.png"></div>
+              <div class="col-md-6 mt-1">
+                <h4>{{product.name}}</h4>
+                <div class="d-flex flex-row">
+                  <div class="mt-1 mb-1 spec-1"><span class="text-2xl ">Available Amount </span><span>:</span>
+                    <span class="text-2xl ">{{product.availableAmount }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                <div class="d-flex flex-row align-items-center">
+                  <h4 class="mr-1">{{ '$' + product.cost }}</h4>
+                </div>
+                <h6 class="text-success">Free shipping</h6>
+                <div class="d-flex flex-column mt-4">
+                  <button class="btn btn-primary btn-sm" type="button"
+                    (click)="onUpdate(product)">Update</button>
+                    <button class="btn btn-outline-primary btn-sm mt-2"
+                    type="button" (click)="onDelete(product.id)">Delete</button>
+                  </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-dataView>
+      </div>
+    </div>
+  </div>
+</div>

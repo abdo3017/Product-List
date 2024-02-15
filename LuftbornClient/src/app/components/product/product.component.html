@@ -1,0 +1,34 @@
+<div mat-dialog-content>
+  <div class="flex flex-column px-8 py-5 gap-4"
+    style="border-radius: 12px; background-image: radial-gradient(circle at left top, var(--primary-400), var(--primary-700))">
+    <form (ngSubmit)="closeDialog()" #form="ngForm">
+      <div class="inline-flex flex-column gap-2">
+        <label for="Amount" class="text-primary-50 font-semibold">Availble Amount</label>
+        <input type="number" class="bg-white-alpha-20 border-none p-3 text-primary-50"
+          [(ngModel)]="product.availableAmount" required name="availableAmount" #availableAmount="ngModel" />
+        <div class="form-control-feedback" *ngIf="availableAmount.errors && (availableAmount.dirty || availableAmount.touched)">
+          <p *ngIf="availableAmount.errors.required">Availble Amount is required</p>
+        </div>
+      </div>
+      <div class="inline-flex flex-column gap-2">
+        <label for="cost" class="text-primary-50 font-semibold">Cost</label>
+        <input type="number" class="bg-white-alpha-20 border-none p-3 text-primary-50" [(ngModel)]="product.cost"
+          required name="cost" #cost="ngModel" />
+           <div class="form-control-feedback" *ngIf="cost.errors && (cost.dirty || cost.touched)">
+          <p *ngIf="cost.errors.required">Cost is required</p>
+        </div>
+      </div>
+      <div class="inline-flex flex-column gap-2">
+        <label for="name" class="text-primary-50 font-semibold">Name</label>
+        <input type="text" class="bg-white-alpha-20 border-none p-3 text-primary-50" [(ngModel)]="product.name" required
+          name="name" #name="ngModel" />
+           <div class="form-control-feedback" *ngIf="name.errors && (name.dirty || name.touched)">
+          <p *ngIf="name.errors.required">Name is required</p>
+        </div>
+      </div>
+      <div class="flex align-items-center gap-2" style="display: block; margin: 1;">
+        <button class="btn btn-primary btn-sm" type="submit">{{config.data.action}}</button>
+      </div>
+    </form>
+  </div>
+</div>
