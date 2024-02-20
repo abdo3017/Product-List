@@ -18,6 +18,7 @@
 - ### Run the below SQL script in your database
 
 ```sql
+ CREATE DATABASE Luftborn
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
